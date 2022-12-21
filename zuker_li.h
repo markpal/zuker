@@ -5,7 +5,7 @@ int diag,row,col;
 
 
 for(diag=2; diag<=N-1; diag++)
-#pragma omp parallel for
+#pragma omp parallel for shared(diag) private(col, row, k, m)
    for(row=0; row<=N-diag-1; row++){
       col = diag+row;
          for(k=row; k<col; k++){
